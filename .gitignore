@@ -15,3 +15,9 @@ venv/
 node_modules/
 .next/
 tsconfig.tsbuildinfo
+
+#claude 
+.claude/
+
+#md
+cheerful-frolicking-fog.md
