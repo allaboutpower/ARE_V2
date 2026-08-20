@@ -1,0 +1,74 @@
+// Self-hosted @font-face via ~@ibm/plex isn't resolvable under Turbopack;
+// IBM Plex is loaded from Google Fonts in app/layout.tsx instead.
+@use "@carbon/react" with ($css--font-face: false);
+
+body {
+  margin: 0;
+}
+
+.are-shell {
+  padding-top: 3rem;
+}
+
+.are-tile {
+  margin-bottom: 1.5rem;
+}
+
+.are-week-select {
+  margin-top: 1rem;
+  max-width: 20rem;
+}
+
+.are-actions {
+  margin-top: 1rem;
+}
+
+.are-code-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.are-row-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.are-output-box {
+  border: 1px solid var(--cds-border-subtle, #c6c6c6);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+// Carbon's accordion content has built-in inline padding (up to 25% on wide
+// screens) that makes nested content narrower than a sibling Tile's content.
+// Zero it out so .are-output-box lines up with the box above it.
+.are-evidence-accordion .cds--accordion__content {
+  padding-inline: 0;
+}
+
+.are-landing {
+  min-block-size: calc(100vh - 3rem - 3rem);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 12rem;
+}
+
+.are-landing-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.are-landing-title {
+  font-size: 2.625rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.are-landing-subtitle {
+  font-size: 1.125rem;
+  color: var(--cds-text-secondary, #525252);
+  max-width: 40rem;
+}

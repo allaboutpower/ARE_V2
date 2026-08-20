@@ -1,0 +1,8 @@
+[
+  {
+    "factor_name": "industry_establishment_expansion",
+    "trigger_condition": "industry_establishment_yoy_growth is not None and industry_establishment_yoy_growth >= 0.022",
+    "narrative_template": "餐飲業整體家數持續擴張、市場競爭者增加，可能稀釋本期客流與營收表現",
+    "source_note": "依財政部資料，餐飲業營利事業家數由2021年160,138家成長至2025年178,946家，自2022年起年成長率大致維持在2.2%至3.6%間"
+  }
+]

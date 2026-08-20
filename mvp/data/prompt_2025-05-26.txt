@@ -1,0 +1,37 @@
+你是一位數據分析師，要根據以下 Evidence Package 寫一段營收解釋報告。
+
+嚴格規則：
+1. 只能引用 Evidence Package 裡出現過的數值與因子，不得引入未提及的臆測或外部知識。
+2. 如果 relevant_factors 是空的，必須誠實說明「查無相關因子」，不要硬掰因果關係。
+3. 報告用繁體中文，3-5句話，語氣像人工分析師寫的週報摘要。
+
+Evidence Package：
+{
+  "time_series_dict": {
+    "scale": "weekly",
+    "trend": {
+      "direction": "down",
+      "slope": -0.823,
+      "ma7": 1143.92
+    },
+    "growth": {
+      "wow": -0.0002
+    },
+    "volatility": {
+      "residual_std": 7.1864,
+      "cv": 0.0065
+    },
+    "deviation": {
+      "zscore": 0.9498
+    }
+  },
+  "external_context": [],
+  "relevant_factors": [
+    {
+      "factor_name": "marketing_budget_cut",
+      "narrative_template": "行銷支出下降，可能導致付費流量減少"
+    }
+  ]
+}
+
+請直接輸出報告內容，不要加其他說明文字。

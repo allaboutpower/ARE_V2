@@ -1,0 +1,38 @@
+[
+  {
+    "factor_name": "marketing_budget_cut",
+    "trigger_condition": "marketing_cost_wow < -0.15",
+    "narrative_template": "行銷支出下降，可能導致付費流量減少",
+    "source_note": "對應合成資料第20週注入的 marketing_cost 驟降情境"
+  },
+  {
+    "factor_name": "seasonal_holiday",
+    "trigger_condition": "is_holiday_week == True",
+    "narrative_template": "本週為假期週，營收波動可能受季節性消費行為影響",
+    "source_note": "對應合成資料 is_holiday_week 標記欄位"
+  },
+  {
+    "factor_name": "competitor_pricing",
+    "trigger_condition": "competitor_price_change == True",
+    "narrative_template": "競爭對手調整定價，可能影響本期營收表現",
+    "source_note": "對應合成資料 competitor_price_change 標記欄位，人工標記"
+  },
+  {
+    "factor_name": "positive_anomaly",
+    "trigger_condition": "zscore is not None and zscore > 2",
+    "narrative_template": "本週表現顯著優於趨勢預期，可能存在單週性的正向異常",
+    "source_note": "依 deviation.zscore 門檻判斷的通用異常因子"
+  },
+  {
+    "factor_name": "negative_anomaly",
+    "trigger_condition": "zscore is not None and zscore < -2",
+    "narrative_template": "本週表現顯著低於趨勢預期，可能存在單週性的負向異常",
+    "source_note": "依 deviation.zscore 門檻判斷的通用異常因子"
+  },
+  {
+    "factor_name": "sustained_uptrend",
+    "trigger_condition": "slope is not None and slope > 0",
+    "narrative_template": "趨勢分量持續上升，顯示營收處於成長階段",
+    "source_note": "依 STL trend.slope 正負判斷的通用趨勢因子"
+  }
+]
