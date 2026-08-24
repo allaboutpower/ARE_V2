@@ -21,3 +21,6 @@ tsconfig.tsbuildinfo
 
 #md
 cheerful-frolicking-fog.md
+
+# Self-hosted runner (local only, contains credentials)
+actions-runner/

@@ -1,0 +1,31 @@
+name: Build and Deploy to minikube
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build backend image
+        run: docker build -t are-backend:local ./backend
+
+      - name: Build frontend image
+        run: docker build -t are-frontend:local ./frontend
+
+      - name: Load images into minikube
+        run: |
+          minikube image load are-backend:local
+          minikube image load are-frontend:local
+
+      - name: Apply K8s manifests
+        run: kubectl apply -f k8s/
+
+      - name: Restart deployments to pick up new image
+        run: |
+          kubectl rollout restart deployment/backend
+          kubectl rollout restart deployment/frontend
