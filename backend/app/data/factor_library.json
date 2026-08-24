@@ -18,9 +18,9 @@
     "source_note": "對應合成資料 competitor_price_change 標記欄位，人工標記"
   },
   {
-    "factor_name": "positive_anomaly12",
+    "factor_name": "positive_anomaly",
     "trigger_condition": "zscore is not None and zscore > 2",
-    "narrative_template": "本週表現顯著優於趨勢預期，可能存在單週性的正向異常",
+    "narrative_template": "本週表現顯著優於趨勢預期，可能存在單週性的正向異常test",
     "source_note": "依 deviation.zscore 門檻判斷的通用異常因子"
   },
   {
