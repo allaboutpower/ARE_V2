@@ -3,6 +3,10 @@ name: Build and Deploy to minikube
 on:
   push:
     branches: [main]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - 'k8s/**'
 
 jobs:
   deploy:
